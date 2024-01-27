@@ -2,6 +2,8 @@ const cells = document.querySelectorAll(".cell");
 
 const statusText = document.querySelector("#statustext");
 const restbutton = document.querySelector("#restartbutton");
+const sound1 = new Audio("PTT-20240126-WA0008.opus") ;
+const sound2 = new Audio("PTT-20240126-WA0006.opus") ;
 
 const winconditions = 
 [
@@ -86,6 +88,7 @@ function checkWinner()
     else if(!options.includes(""))
     {
         statusText.textContent = `DRAW!`;
+        sound1.play()
         running = false;
     }
     else
